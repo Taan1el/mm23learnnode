@@ -1,2 +1,2 @@
-import module from "./module.js";
-module.hello();
+const common = require('./module.js');
+common.hello();
