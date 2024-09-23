@@ -1,2 +1,2 @@
-import module from "./module.js";
-module.hello();
+import boxen from 'boxen';
+console.log(boxen('unicorn', {padding: 1}));
