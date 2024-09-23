@@ -1,0 +1,1 @@
+(()=>{var o={727:o=>{o.exports={helloCommonJS(){console.log("hello CommonJS")}}}},e={};function l(r){var t=e[r];if(void 0!==t)return t.exports;var n=e[r]={exports:{}};return o[r](n,n.exports,l),n.exports}(()=>{"use strict";({helloES(){console.log("hello ES")}}).helloES(),l(727).helloCommonJS()})()})();
