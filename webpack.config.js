@@ -75,4 +75,21 @@ module.exports = {
   ],
 };
 
+plugins:[
+  new HtmlWebpackPlugin{(
+    template: "./src/index.njk";
+  )}
+    new HtmlWebpackPlugin{(
+    template: "./src/patterns.njk";
+  )}
+    new HtmlwebpackPlugin{(
+    template: "./src/blog.njk"; 
+  )}
+    new HtmlWebpackPlugin{(
+    template: "./src/contact.njk";
+  )}
+   
+]
+
+
 
