@@ -1,17 +1,18 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, "public"),
     },
     compress: true,
     port: 9000,
@@ -27,69 +28,58 @@ module.exports = {
         use: [
           {
             // Adds CSS to the DOM by injecting a `<style>` tag
-            loader: 'style-loader'
+            loader: "style-loader",
           },
           {
             // Interprets `@import` and `url()` like `import/require()` and will resolve them
-            loader: 'css-loader'
+            loader: "css-loader",
           },
           {
             // Loader for webpack to process CSS with PostCSS
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [
-                  autoprefixer
-                ]
-              }
-            }
+                plugins: [autoprefixer],
+              },
+            },
           },
           {
             // Loads a SASS/SCSS file and compiles it to CSS
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
               sassOptions: {
-                quietDeps: true
-              }
-            }
-          }
-        ]
+                quietDeps: true,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.njk$/,
         use: [
-            {
-                loader: 'simple-nunjucks-loader',
-                options: {}
-            }
-        ]
-    },
+          {
+            loader: "simple-nunjucks-loader",
+            options: {},
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.njk'
-
-    })
-
+      template: "./src/index.njk",
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'patterns.html',
+      template: "./src/patterns.njk",
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'blog.html',
+      template: "./src/blog.njk",
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'contact.html',
+      template: "./src/contact.njk",
+    }),
   ],
 };
-
-plugins:[
-  new HtmlWebpackPlugin{(
-    template: "./src/index.njk";
-  )}
-    new HtmlWebpackPlugin{(
-    template: "./src/patterns.njk";
-  )}
-    new HtmlwebpackPlugin{(
-    template: "./src/blog.njk"; 
-  )}
-    new HtmlWebpackPlugin{(
-    template: "./src/contact.njk";
-  )}
-   
-]
-
-
-

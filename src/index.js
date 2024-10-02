@@ -1,4 +1,3 @@
 import './style.scss';
-console.log('hello Webpack');
-// Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
+import * as bootstrap from 'bootstrap';
+console.log('Hello Webpack');
