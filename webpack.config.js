@@ -38,11 +38,11 @@ export default {
             loader: "style-loader",
           },
           {
-            // Interprets `@import` and `url()` like `import/require()` and will resolve them
+            // Interprets `@import` and `url()` like `import/require()
             loader: "css-loader",
           },
           {
-            // Loader for webpack to process CSS with PostCSS
+            // Loader for webpack to process CSS
             loader: "postcss-loader",
             options: {
               postcssOptions: {
@@ -51,7 +51,7 @@ export default {
             },
           },
           {
-            // Loads a SASS/SCSS file and compiles it to CSS
+            
             loader: "sass-loader",
             options: {
               sassOptions: {
