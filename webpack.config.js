@@ -2,6 +2,8 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import { fileURLToPath } from 'url';
+import { VueLoaderPlugin } from 'vue-loader';
+
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -70,6 +72,10 @@ export default {
           },
         ],
       },
+      {
+         test: /\.vue$/,
+        loader: 'vue-loader'
+      }
     ],
   },
   plugins: [
@@ -91,5 +97,6 @@ export default {
       filename: 'contact.html',
       template: "./src/contact.njk",
     }),
+    new VueLoaderPlugin(),
   ],
 };
