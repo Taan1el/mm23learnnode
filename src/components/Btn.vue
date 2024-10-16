@@ -1,5 +1,3 @@
-
-
 <script setup>
 import { computed } from 'vue';
 let props = defineProps({

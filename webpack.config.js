@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url';
 import { VueLoaderPlugin } from 'vue-loader';
 import webpack from 'webpack';
 
-
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 
@@ -22,6 +21,7 @@ export default {
     },
     compress: true,
     port: 9000,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -75,15 +75,15 @@ export default {
       }
     ],
   },
-  plugins:[
+  plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new VueLoaderPlugin(),
     new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: 'true',
       __VUE_PROD_DEVTOOLS__: 'false',
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
-    }),
-    new VueLoaderPlugin(),
+    })
   ],
 };
